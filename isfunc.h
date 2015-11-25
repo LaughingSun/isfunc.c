@@ -1,4 +1,7 @@
 
+#ifndef ISFUNC_H
+#define ISFUNC_H
+
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -15,4 +18,6 @@
 #endif
 
 extern ISFUNC_BOOL isfunc ( void *p );
+
+#endif
 
