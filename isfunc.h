@@ -7,6 +7,13 @@
 #include <stdio.h>
 #include <errno.h>
 
+#ifndef ISFUNC_EXPECTED_COMMON_SIZE
+// TODO: this actually would vary depending on the target hardware (and OS?):
+//       so it would be best to detect that using the predefined macros.
+#define ISFUNC_EXPECTED_COMMON_SIZE 4
+
+#endif
+
 #ifdef bool
 #define ISFUNC_BOOL  bool
 #define ISFUNC_TRUE  (true)

@@ -7,8 +7,11 @@ size_t determine_func_common_length ( ) {
   char *funcp = (char *)func
       , *p = (char *)determine_func_common_length;
   size_t c = 0;
-  while ( *funcp == *p++ && ++c < 8 ) funcp++;
-  if ( c > 0 && c < 8 ) return c;
+  while ( *funcp == *p++ && ++c <= 8 ) funcp++;
+#if defined(ISFUNC_EXPECTED_COMMON_SIZE) && ISFUNC_EXPECTED_COMMON_SIZE
+  if ( c <= 0 && c > 8 ) c = ISFUNC_EXPECTED_COMMON_SIZE;
+#endif
+  if ( c > 0 && c <= 8 ) return c;
   return 0;
 }
 
